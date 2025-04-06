@@ -11,13 +11,16 @@ try {
     throw e;
 }
 
-function initMap() {
+window.initMap = function () {
     if (!addresses || addresses.length < 2) {
         alert("At least two addresses are required (origin and destination).");
         return;
     }
 
-    const directionsService = new google.maps.Map(document.getElementById("map"), {
+    const directionsRenderer = new google.maps.DirectionsRendererd();
+    const directionsService = new google.maps.DirectionsService();
+    
+    const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 6,
         center: { lat: 39.5, lng: -98.35 },
     });
