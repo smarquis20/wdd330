@@ -24,20 +24,20 @@
         <img src="images/smart-logo-black.webp" alt="Smart Route Logo">
         <h2>SMART ROUTES</h2>
     </header>
-    
+
     <div class="form-box">
-    <h2>Enter Addresses</h2>
-    <form id="addressForm">
-        <div id="addressContainer">
-            <input type="text" class="address-field" name="address[]" placeholder="Enter Address" required>
-            <input type="text" class="address-field" name="address[]" placeholder="Enter Address" required>
-        </div>
-        <div class="button-container">
+        <h2>Enter Addresses</h2>
+        <form id="addressForm">
+            <div id="addressContainer">
+                <input type="text" class="address-field" name="address[]" placeholder="Enter Address" required>
+                <input type="text" class="address-field" name="address[]" placeholder="Enter Address" required>
+            </div>
             <button type="button" id="addAddressButton">+ Add another stop</button>
-            <input type="file" id="csvUpload" plaaccept=".csv">
-            <button type="submit">Create Route</button>
-        </div>
-    </form>
+            <div class="button-container">
+                <input type="file" id="csvUpload" accept=".csv" placeholder="Upload CSV File">
+                <button type="submit">Create Route</button>
+            </div>
+        </form>
     </div>
     <footer>
         <div class="footer-contact">
@@ -47,9 +47,12 @@
             <p>(555) 555-5555</p>
         </div>
         <div class="footer-media">
-            <a href="https://www.facebook.com" target="_blank"><img src="images/facebook.png" alt="facebook" width="50" height="50" loading="lazy"></a>
-            <a href="https://www.instagram.com" target="_blank"><img src="images/instagram.png" alt="instagram" width="50" height="50" loading="lazy"></a>
-            <a href="https://www.linkedin.com" target="_blank"><img src="images/linkedin.png" alt="linkedin" width="50" height="50" loading="lazy"></a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener"><img src="images/facebook.png"
+                    alt="facebook" width="50" height="50" loading="lazy"></a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener"><img src="images/instagram.png"
+                    alt="instagram" width="50" height="50" loading="lazy"></a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener"><img src="images/linkedin.png"
+                    alt="linkedin" width="50" height="50" loading="lazy"></a>
         </div>
         <div class="footer-address">
             <p>&copy;<span id="currentyear"></span> | Shaun Marquis | Missouri, USA</p>
