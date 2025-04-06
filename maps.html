@@ -4,41 +4,23 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Smart Route: Home Page</title>
+    <title>Optimized Route Map</title>
     <meta name="author" content="Shaun Marquis">
     <meta name="description"
-        content="WDD 330 - Final Project Smart Route - Create homepage and related pages for Smart Route.">
+        content="WDD 330 - Final Project Smart Route - Map page that will display the map and route.">
     <meta property="og:title" content="WDD 330 - Final Project Smart Route - Home Page">
     <meta property="og:description"
-        content="WDD 330 - Final Project Smart Route - Create homepage and related pages for Smart Route.">
+        content="WDD 330 - Final Project Smart Route - Map page that will display the map and route.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://smarquis20.github.io/wdd330/index.html">
-    <meta property="og:image" content="https://smarquis20.github.io/wdd330/images/smart_logo.webp">
+    <meta property="og:url" content="https://smarquis20.github.io/wdd330/maps.html">
+    <meta property="og:image" content="https://smarquis20.github.io/wdd330/images/smart-logo-black.webp">
     <link rel="stylesheet" href="css/smart.css">
-    <link rel="icon" href="images/smart_logo.ico">
-    <script src="js/main.js" defer></script>
+    <link rel="icon" href="images/smart-logo-black.webp">
+    <script src="js/map.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <img src="images/smart-logo-black.webp" alt="Smart Route Logo">
-        <h2>SMART ROUTES</h2>
-    </header>
-    
-    <div class="form-box">
-    <h2>Enter Addresses</h2>
-    <form id="addressForm">
-        <div id="addressContainer">
-            <input type="text" class="address-field" name="address[]" placeholder="Enter Address" required>
-            <input type="text" class="address-field" name="address[]" placeholder="Enter Address" required>
-        </div>
-        <div class="button-container">
-            <button type="button" id="addAddressButton">+ Add another stop</button>
-            <input type="file" id="csvUpload" plaaccept=".csv">
-            <button type="submit">Create Route</button>
-        </div>
-    </form>
-    </div>
+    <div id="map"></div>
     <footer>
         <div class="footer-contact">
             <p>Smart Route</p>
