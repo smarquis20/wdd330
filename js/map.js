@@ -20,10 +20,7 @@ window.initMap = function () {
     const directionsRenderer = new google.maps.DirectionsRenderer();
     const directionsService = new google.maps.DirectionsService();
     
-    const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 6,
-        center: { lat: 39.5, lng: -98.35 },
-    });
+    const map = new google.maps.Map(document.getElementById("map"), {});
 
     directionsRenderer.setMap(map);
 
