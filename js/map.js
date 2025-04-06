@@ -17,7 +17,7 @@ window.initMap = function () {
         return;
     }
 
-    const directionsRenderer = new google.maps.DirectionsRendererd();
+    const directionsRenderer = new google.maps.DirectionsRenderer();
     const directionsService = new google.maps.DirectionsService();
     
     const map = new google.maps.Map(document.getElementById("map"), {
@@ -25,12 +25,12 @@ window.initMap = function () {
         center: { lat: 39.5, lng: -98.35 },
     });
 
-    directionsService.setMap(map);
+    directionsRenderer.setMap(map);
 
     const origin = addresses[0];
     const destination = addresses[addresses.length - 1];
     const waypoints = addresses.slice(1, -1).map(add => ({
-        location: addr,
+        location: add,
         stopover: true,
     }));
 
@@ -44,7 +44,7 @@ window.initMap = function () {
         },
         (response, status) => {
             if (status === "OK") {
-                directionsRenderer.setDirections(reponse);
+                directionsRenderer.setDirections(response);
             } else {
                 alert("Directions request failed due to " + status);
             }
