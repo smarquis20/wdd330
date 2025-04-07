@@ -1,4 +1,4 @@
-const API_KEY = "AIzaSyCAc69Kml7FapNG5cQV0ZF0tFaixsZXjHc";
+const API_KEY = "";
 const urlParams = new URLSearchParams(window.location.search);
 const addressesParam = urlParams.get("addresses");
 
@@ -19,7 +19,7 @@ window.initMap = function () {
 
     const directionsRenderer = new google.maps.DirectionsRenderer();
     const directionsService = new google.maps.DirectionsService();
-    
+
     const map = new google.maps.Map(document.getElementById("map"), {});
 
     directionsRenderer.setMap(map);
