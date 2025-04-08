@@ -1,6 +1,7 @@
 const API_KEY = "AIzaSyCHHXRafusOsrYooT8aBNbl_JXREMguLrU";
 const urlParams = new URLSearchParams(window.location.search);
 const addressesParam = urlParams.get("addresses");
+document.getElementById("currentyear").innerHTML = new Date().getFullYear();
 
 let addresses = [];
 

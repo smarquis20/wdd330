@@ -1,6 +1,7 @@
 import { addAddressField } from "./address.js";
 import { setupCSVUpload } from "./import.js";
 
+document.getElementById("currentyear").innerHTML = new Date().getFullYear();
 document.getElementById("addAddressButton").addEventListener("click", () => addAddressField());
 
 setupCSVUpload("csvUpload", "addressContainer");
