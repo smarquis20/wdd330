@@ -1,4 +1,4 @@
-const API_KEY = "";
+const API_KEY = "AIzaSyCHHXRafusOsrYooT8aBNbl_JXREMguLrU";
 const urlParams = new URLSearchParams(window.location.search);
 const addressesParam = urlParams.get("addresses");
 
