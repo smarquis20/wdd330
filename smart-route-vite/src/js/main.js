@@ -20,5 +20,5 @@ document.getElementById("addressForm").addEventListener("submit", function (e) {
     }
 
     const encoded = encodeURIComponent(JSON.stringify(addresses));
-    window.location.href = `maps?addresses=${encoded}`;
+    window.location.href = `maps.html?addresses=${encoded}`;
 });
