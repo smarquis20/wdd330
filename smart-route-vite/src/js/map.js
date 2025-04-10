@@ -50,6 +50,8 @@ function initMap() {
     );
 }
 
+window.initMap = initMap;
+
 function loadGoogleMapsScript() {
     const script = document.createElement("script");
     script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&callback=initMap`;
@@ -57,5 +59,4 @@ function loadGoogleMapsScript() {
     document.head.appendChild(script);
 }
 
-window.initMap = initMap;
 loadGoogleMapsScript();
