@@ -127,6 +127,43 @@ form input[type="submit"]:hover {
     width: 100%;
 }
 
+#sidebar {
+    width: 300px;
+    background: white;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+    position: relative;
+    z-index: 1;
+}
+
+#sidebar.open {
+    transform: translateX(0);
+}
+
+#toggleSidebar {
+    position: absolute;
+    top: 10px;
+    right: -40px;
+    width: 30px;
+    height: 30px;
+    background: var(--color1);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#addressList {
+    margin-bottom: 10px;
+}
+
+#routeDetails {
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
 footer {
     text-align: center;
     font-size: 1rem;
