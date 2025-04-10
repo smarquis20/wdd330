@@ -29,14 +29,16 @@ header h2 {
     text-shadow: 1px 1px 3px #FF5722;
 }
 
-body {
-    margin: 0 auto;
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
 .form-box {
     max-width: 600px;
     margin: 0 auto;
-    margin-bottom: 50px;
+    margin-bottom: 150px;
     padding: 20px;
     background-color: white;
     border-radius: 8px;
@@ -123,19 +125,23 @@ form input[type="submit"]:hover {
 }
 
 #map {
-    height: 80vh;
+    height: 90vh;
     width: 100%;
+    position: relative;
 }
 
 #sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
     width: 300px;
     background: white;
     padding: 15px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
     transform: translateX(-100%);
-    position: relative;
-    z-index: 1;
+    z-index: 10;
 }
 
 #sidebar.open {
@@ -144,7 +150,7 @@ form input[type="submit"]:hover {
 
 #toggleSidebar {
     position: absolute;
-    top: 10px;
+    top: 40%;
     right: -40px;
     width: 30px;
     height: 30px;
@@ -153,6 +159,7 @@ form input[type="submit"]:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    z-index: 11;
 }
 
 #addressList {
