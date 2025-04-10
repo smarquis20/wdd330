@@ -12,7 +12,7 @@ try {
     throw e;
 }
 
-window.initMap = function () {
+function initMap() {
     if (!addresses || addresses.length < 2) {
         alert("At least two addresses are required (origin and destination).");
         return;
@@ -57,4 +57,5 @@ function loadGoogleMapsScript() {
     document.head.appendChild(script);
 }
 
+window.initMap = initMap;
 loadGoogleMapsScript();
