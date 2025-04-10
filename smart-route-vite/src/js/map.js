@@ -3,8 +3,6 @@ const urlParams = new URLSearchParams(window.location.search);
 const addressesParam = urlParams.get("addresses");
 document.getElementById("currentyear").innerHTML = new Date().getFullYear();
 
-console.log("GOOGLE MAPS KEY:", import.meta.env.VITE_GOOGLE_MAPS_API_KEY);
-
 let addresses = [];
 
 try {
