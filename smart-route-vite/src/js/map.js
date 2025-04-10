@@ -22,6 +22,8 @@ function initMap() {
     const directionsService = new google.maps.DirectionsService();
 
     const map = new google.maps.Map(document.getElementById("map"), {});
+    const trafficLayer = new google.maps.TrafficLayer();
+    trafficLayer.setMap(map);
 
     directionsRenderer.setMap(map);
 
@@ -39,10 +41,25 @@ function initMap() {
             waypoints,
             optimizeWaypoints: true,
             travelMode: google.maps.TravelMode.DRIVING,
+            drivingOptions:{
+                departureTime: new Date(),
+                trafficModel: "bestguess"
+            }
         },
         (response, status) => {
             if (status === "OK") {
                 directionsRenderer.setDirections(response);
+                const routeDetailsDiv = document.getElementById("routeDetails");
+                const route = response.routes[0];
+                let summary = "";
+
+                route.legs.forEach((leg, i) => {
+                    summary += `<p><strong>Stop ${i + 1}</strong>: ${leg.start_address}<br>to ${leg.end_address}<br>`;
+                    summary += `Distance: ${leg.distance.text}, Duration: ${leg.duration.text}</p>`;
+                });
+
+                routeDetailsDiv.innerHTML = summary;
+
             } else {
                 alert("Directions request failed due to " + status);
             }
@@ -60,3 +77,25 @@ function loadGoogleMapsScript() {
 }
 
 loadGoogleMapsScript();
+
+document.addEventListener("DOMContentLoaded", () => {
+    const sidebar = document.getElementById("sidebar");
+    document.getElementById("toggleSidebar").addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+    });
+
+    const addressList = document.getElementById("addressList");
+    addresses.forEach((addr, idx) => {
+        const div = document.createElement("div");
+        div.className = "address-input";
+        const input = document.createElement("input");
+        input.type = "text";
+        input.value = addr;
+        input.className = "address-field";
+        input.addEventListener("change", () => {
+            addresses[idx] = input.value;
+        });
+        div.appendChild(input);
+        addressList.appendChild(div);
+    });
+});
