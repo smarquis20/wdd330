@@ -22,6 +22,8 @@ function initMap() {
     const directionsService = new google.maps.DirectionsService();
 
     const map = new google.maps.Map(document.getElementById("map"), {});
+    const trafficLayer = new google.maps.TrafficLayer();
+    trafficLayer.setMap(map);
 
     directionsRenderer.setMap(map);
 
@@ -39,6 +41,10 @@ function initMap() {
             waypoints,
             optimizeWaypoints: true,
             travelMode: google.maps.TravelMode.DRIVING,
+            drivingOptions:{
+                departureTime: new Date(),
+                trafficModel: "bestguess"
+            }
         },
         (response, status) => {
             if (status === "OK") {
@@ -53,7 +59,7 @@ function initMap() {
                 });
 
                 routeDetailsDiv.innerHTML = summary;
-                
+
             } else {
                 alert("Directions request failed due to " + status);
             }
