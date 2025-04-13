@@ -89,6 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         saveNamedRoute(name, addresses);
     });
+    
     const sidebar = document.getElementById("sidebar");
     document.getElementById("toggleSidebar").addEventListener("click", () => {
         sidebar.classList.toggle("open");
