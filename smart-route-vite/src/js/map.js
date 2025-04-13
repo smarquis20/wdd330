@@ -1,3 +1,5 @@
+import { saveNamedRoute } from "./storage";
+
 const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 const urlParams = new URLSearchParams(window.location.search);
 const addressesParam = urlParams.get("addresses");
@@ -79,6 +81,15 @@ function loadGoogleMapsScript() {
 loadGoogleMapsScript();
 
 document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("saveRouteButton").addEventListener("click", () => {
+        const name = document.getElementById("routeNameInput").value.trim();
+        if (!name) {
+            alert("Please enter a name from the route.");
+            return;
+        }
+        saveNamedRoute(name, addresses);
+    });
+    
     const sidebar = document.getElementById("sidebar");
     document.getElementById("toggleSidebar").addEventListener("click", () => {
         sidebar.classList.toggle("open");
