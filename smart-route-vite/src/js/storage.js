@@ -1,4 +1,4 @@
-const STORAGE_KEY = "smartRoute-addresses";
+const STORAGE_KEY = "smartRoute-savedRoutes";
 
 export function saveNamedRoute(name, addresses) {
     const routes = getAllRoutes();
@@ -19,9 +19,4 @@ export function getRouteByName(name) {
 
 export function getRouteNames() {
     return Object.keys(getAllRoutes());
-}
-
-export function loadRoute() {
-    const data = localStorage.getItem(STORAGE_KEY);
-    return data ? JSON.parse(data) : null;
 }
