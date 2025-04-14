@@ -1,6 +1,7 @@
 import { saveNamedRoute } from "./storage";
 
 const VITE_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+console.log(VITE_API_KEY);
 const urlParams = new URLSearchParams(window.location.search);
 const addressesParam = urlParams.get("addresses");
 document.getElementById("currentyear").innerHTML = new Date().getFullYear();
