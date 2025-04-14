@@ -1,6 +1,5 @@
 import { saveNamedRoute } from "./storage";
 
-const VITE_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 const urlParams = new URLSearchParams(window.location.search);
 const addressesParam = urlParams.get("addresses");
 document.getElementById("currentyear").innerHTML = new Date().getFullYear();
@@ -73,7 +72,7 @@ window.initMap = initMap;
 
 function loadGoogleMapsScript() {
     const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${VITE_API_KEY}&callback=initMap`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}&callback=initMap`;
     script.async = true;
     document.head.appendChild(script);
 }
