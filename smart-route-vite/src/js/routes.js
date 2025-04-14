@@ -1,12 +1,14 @@
+const STORAGE_KEY = "smartRoute-savedRoutes"
+
 export function saveNamedRoute(name, addresses) {
     const routes = getAllRoutes();
     routes[name] = addresses;
-    localStorage.setItem("smartRoute-savedRoutes", JSON.stringify(routes));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(routes));
     alert(`Route "${name}" saved!`);
 }
 
 export function getAllRoutes() {
-    const data = localStorage.getItem("smartRoute-savedRoutes");
+    const data = localStorage.getItem(STORAGE_KEY);
     return data ? JSON.parse(data) : {};
 }
 

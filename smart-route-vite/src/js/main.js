@@ -1,6 +1,6 @@
 import { addAddressField } from "./address.js";
 import { setupCSVUpload } from "./import.js";
-import { getRouteByName, getRouteNames } from "./storage.js";
+import { getRouteByName, getRouteNames } from "./routes.js";
 
 document.getElementById("currentyear").innerHTML = new Date().getFullYear();
 document.getElementById("addAddressButton").addEventListener("click", () => addAddressField());
